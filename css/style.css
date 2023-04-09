@@ -1,5 +1,8 @@
 body {
-    width: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
     background-color: #EEF9BF;
     font-family: 'Roboto';
     font-style: normal;
@@ -9,7 +12,11 @@ body {
     letter-spacing: -0.004em;
     color: #75B79E;
 }
+body > h1 {
+    margin: 45px auto;
+}
 .card-containers {
+    margin: auto;
     display: flex;
     flex-direction: row;
     gap: 15px;
@@ -21,11 +28,16 @@ body {
     width: 200px;
     height: 250px;
     position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .8s;
 }
 .card img {
     width: 80%;
 }
-
+.card.active {
+    transform: rotateY(180deg);
+}
 .face {
     width: 100%;
     height: 100%;
@@ -38,18 +50,8 @@ body {
     position: absolute;
     backface-visibility: hidden;
     transition: all .5s;
-    transform-style: preserve-3d;
+    backface-visibility: hidden;
 }
-
-.back-face {
+.front-face {
     transform: rotateY(180deg);
 }
-/*
-.card:hover .back-face {
-    transform: rotateY(0deg);
-}
-
-.card:hover .front-face {
-    transform: rotateY(-180deg);
-}
-*/
