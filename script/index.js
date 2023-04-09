@@ -12,19 +12,20 @@ let quantosCliques = 0;
 verificaQuantidadeCartas(quantasCartas);
 function verificaQuantidadeCartas() {
     quantasCartas = prompt('Insira com quantas cartas vc quer jogar (entre 4 e 14)');
-    while (isNaN(quantasCartas) || quantasCartas < 4 || quantasCartas%2 == 1 || quantasCartas > 14) {
-        if(quantasCartas<4) {
-            quantasCartas= prompt('O numero precisa ser maior ou igual a 4!')
-        } else if (quantasCartas%2 == 1) {
-            quantasCartas= prompt('O numero precisa ser par!')
-        } else if (quantasCartas > 14) {
-            quantasCartas= prompt('O numero precisa ser menor ou igual a 14!')
-        } else if (isNaN(quantasCartas)) {
-            quantasCartas = prompt('Por favor, digite um número');
-        }
-    }
     if (quantasCartas >= 4 && quantasCartas%2 == 0 && quantasCartas <= 14) {
         vamosJogar(quantasCartas);
+    } else {
+        while (isNaN(quantasCartas) || quantasCartas < 4 || quantasCartas%2 == 1 || quantasCartas > 14) {
+            if(quantasCartas<4) {
+                quantasCartas= prompt('O numero precisa ser maior ou igual a 4!')
+            } else if (quantasCartas%2 == 1) {
+                quantasCartas= prompt('O numero precisa ser par!')
+            } else if (quantasCartas > 14) {
+                quantasCartas= prompt('O numero precisa ser menor ou igual a 14!')
+            } else if (isNaN(quantasCartas)) {
+                quantasCartas = prompt('Por favor, digite um número');
+            }
+        }
     }
 }
 
