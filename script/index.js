@@ -44,7 +44,7 @@ function vamosJogar(qtdeCartas) {
     const sortCards = cartasUsadas.concat(cartasUsadas).sort(() => 0.5 - Math.random())
     sortCards.forEach((cardImg, i)=> {
         const cardElement = 
-    `<div class="card" data-img="${cardImg} data-test="card"">
+    `<div class="card" data-img="${cardImg}" data-test="card">
         <div class="back-face face">
             <img src="./img/back.png" alt="verso-card" data-test="face-down-image">
         </div>
